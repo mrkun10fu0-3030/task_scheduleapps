@@ -1,0 +1,35 @@
+<h1>予定の編集</h1>
+
+<% if @schedule.errors.any? %>
+  <p class="error-message">失敗しました</p>
+<% end %>
+
+<%= form_with model: @schedule do |f| %>
+  <div>
+    <%= f.label :title, "タイトル" %>
+    <%= f.text_field :title %>
+  </div>
+  
+  <div>
+    <%= f.label :start_date, "開始日" %>
+    <%= f.date_field :start_date %>
+  </div>
+
+  <div>
+    <%= f.label :end_date, "終了日" %>
+    <%= f.date_field :end_date %>
+  </div>
+
+  <div>
+    <%= f.label :all_day, "終日" %>
+    <%= f.check_box :all_day %>
+  </div>
+
+  <div>
+    <%= f.label :content, "メモ" %>
+    <%= f.text_area :content %>
+  </div>
+
+  
+  <%= f.submit "更新する", class: "btn"%>
+<% end %>
