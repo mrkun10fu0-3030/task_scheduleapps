@@ -20,7 +20,6 @@ class SchedulesController < ApplicationController
       flash.now[:alert] = "失敗しました"
       render :new, status: :unprocessable_entity
     end
-
   end
 
   def edit
@@ -48,5 +47,4 @@ class SchedulesController < ApplicationController
   def schedule_params
     params.require(:schedule).permit(:title, :start_date, :end_date, :all_day, :content)
   end
-
 end
